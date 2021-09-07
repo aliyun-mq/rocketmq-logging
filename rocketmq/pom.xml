@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>rocketmq-logging</artifactId>
+        <groupId>io.github.aaron-ai</groupId>
+        <version>1.2.3.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>rocketmq-logback-shaded</artifactId>
+
+    <properties>
+        <maven.compiler.release>6</maven.compiler.release>
+        <shade-prefix>io.github.aaronai.rocketmq.shaded</shade-prefix>
+        <config-file-prefix>rocketmq</config-file-prefix>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>rocketmq-logback-extensions</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <minimizeJar>false</minimizeJar>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.slf4j</pattern>
+                                    <shadedPattern>io.github.aaronai.shaded.org.slf4j</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>ch.qos.logback</pattern>
+                                    <shadedPattern>${shade-prefix}.ch.qos.logback</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <!-- logback internal constant, see
+                                      ch.qos.logback.classic.util.ContextInitializer -->
+                                    <rawString>true</rawString>
+                                    <pattern>^logback.configurationFile$</pattern>
+                                    <shadedPattern>${config-file-prefix}-logback.configurationFile</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <!-- shades logback internal constant, see
+                                      ch.qos.logback.classic.util.ContextInitializer -->
+                                    <rawString>true</rawString>
+                                    <pattern>^logback.groovy$</pattern>
+                                    <shadedPattern>${config-file-prefix}-logback.groovy</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <!-- shades logback internal constant and rename user's logback file, see
+                                      ch.qos.logback.classic.util.ContextInitializer -->
+                                    <rawString>true</rawString>
+                                    <pattern>^logback(-test)?.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}-logback$1.xml</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
+                                    <rawString>true</rawString>
+                                    <pattern>^logback.ContextSelector$</pattern>
+                                    <shadedPattern>${config-file-prefix}-logback.ContextSelector</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
+                                    <rawString>true</rawString>
+                                    <pattern>^java:comp/env/logback/configuration-resource$</pattern>
+                                    <shadedPattern>java:comp/env/${config-file-prefix}-logback/configuration-resource
+                                    </shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
+                                    <rawString>true</rawString>
+                                    <pattern>^java:comp/env/logback/context-name$</pattern>
+                                    <shadedPattern>java:comp/env/${config-file-prefix}-logback/context-name
+                                    </shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete file="${project.build.directory}/original-${project.artifactId}}-${project.version}.jar"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
