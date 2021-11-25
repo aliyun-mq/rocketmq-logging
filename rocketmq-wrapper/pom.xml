@@ -30,8 +30,8 @@
 
     <properties>
         <maven.compiler.release>6</maven.compiler.release>
-        <shade-prefix>io.github.aliyunmq.rocketmqwrapper.shaded</shade-prefix>
-        <config-file-prefix>rocketmq-wrapper</config-file-prefix>
+        <shade-prefix>io.github.aliyunmq.rocketmq.wrapper.shaded</shade-prefix>
+        <config-file-prefix>rocketmq.wrapper</config-file-prefix>
     </properties>
 
     <dependencies>
@@ -89,40 +89,40 @@
                                       ch.qos.logback.classic.util.ContextInitializer -->
                                     <rawString>true</rawString>
                                     <pattern>^logback.configurationFile$</pattern>
-                                    <shadedPattern>${config-file-prefix}-logback.configurationFile</shadedPattern>
+                                    <shadedPattern>${config-file-prefix}.logback.configurationFile</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <!-- shades logback internal constant, see
                                       ch.qos.logback.classic.util.ContextInitializer -->
                                     <rawString>true</rawString>
                                     <pattern>^logback.groovy$</pattern>
-                                    <shadedPattern>${config-file-prefix}-logback.groovy</shadedPattern>
+                                    <shadedPattern>${config-file-prefix}.logback.groovy</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <!-- shades logback internal constant and rename user's logback file, see
                                       ch.qos.logback.classic.util.ContextInitializer -->
                                     <rawString>true</rawString>
                                     <pattern>^logback(-test)?.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}-logback$1.xml</shadedPattern>
+                                    <shadedPattern>${config-file-prefix}.logback$1.xml</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
                                     <rawString>true</rawString>
                                     <pattern>^logback.ContextSelector$</pattern>
-                                    <shadedPattern>${config-file-prefix}-logback.ContextSelector</shadedPattern>
+                                    <shadedPattern>${config-file-prefix}.logback.ContextSelector</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
                                     <rawString>true</rawString>
                                     <pattern>^java:comp/env/logback/configuration-resource$</pattern>
-                                    <shadedPattern>java:comp/env/${config-file-prefix}-logback/configuration-resource
+                                    <shadedPattern>java:comp/env/${config-file-prefix}.logback/configuration-resource
                                     </shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
                                     <rawString>true</rawString>
                                     <pattern>^java:comp/env/logback/context-name$</pattern>
-                                    <shadedPattern>java:comp/env/${config-file-prefix}-logback/context-name
+                                    <shadedPattern>java:comp/env/${config-file-prefix}.logback/context-name
                                     </shadedPattern>
                                 </relocation>
                             </relocations>
