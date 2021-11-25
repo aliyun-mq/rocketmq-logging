@@ -1,4 +1,4 @@
-## Loging for RocketMQ
+## Logging for RocketMQ
 
 Current project is a shaded logback to replace the logging module of rocketmq.
 
