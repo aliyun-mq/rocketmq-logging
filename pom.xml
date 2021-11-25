@@ -26,7 +26,7 @@
         <version>9</version>
     </parent>
 
-    <groupId>io.github.aaron-ai</groupId>
+    <groupId>io.github.aliyun-mq</groupId>
     <artifactId>rocketmq-logging</artifactId>
     <packaging>pom</packaging>
     <version>1.2.3.0-SNAPSHOT</version>
@@ -146,8 +146,8 @@
     </build>
 
     <scm>
-        <url>git@github.com:aaron-ai/rocketmq-logging.git</url>
-        <connection>scm:git:git@github.com:aaron-ai/rocketmq-logging.git</connection>
-        <developerConnection>scm:git:git@github.com:aaron-ai/rocketmq-logging.git</developerConnection>
+        <url>git@github.com:aliyun-mq/rocketmq-logging.git</url>
+        <connection>scm:git:git@github.com:aliyun-mq/rocketmq-logging.git</connection>
+        <developerConnection>scm:git:git@github.com:aliyun-mq/rocketmq-logging.git</developerConnection>
     </scm>
 </project>

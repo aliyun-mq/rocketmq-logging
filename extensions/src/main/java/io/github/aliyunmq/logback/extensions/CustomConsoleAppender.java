@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package io.github.aaronai.logback.extensions;
+package io.github.aliyunmq.logback.extensions;
 
 import ch.qos.logback.core.ConsoleAppender;
 

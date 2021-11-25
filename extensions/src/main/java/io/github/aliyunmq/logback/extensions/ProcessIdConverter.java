@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package io.github.aaronai.logback.extensions;
+package io.github.aliyunmq.logback.extensions;
 
 import ch.qos.logback.classic.pattern.ClassicConverter;
 import ch.qos.logback.classic.spi.ILoggingEvent;

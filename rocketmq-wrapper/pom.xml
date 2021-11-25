@@ -21,7 +21,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>rocketmq-logging</artifactId>
-        <groupId>io.github.aaron-ai</groupId>
+        <groupId>io.github.aliyun-mq</groupId>
         <version>1.2.3.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -30,7 +30,7 @@
 
     <properties>
         <maven.compiler.release>6</maven.compiler.release>
-        <shade-prefix>io.github.aaronai.rocketmqwrapper.shaded</shade-prefix>
+        <shade-prefix>io.github.aliyunmq.rocketmqwrapper.shaded</shade-prefix>
         <config-file-prefix>rocketmq-wrapper</config-file-prefix>
     </properties>
 
@@ -74,7 +74,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>org.slf4j</pattern>
-                                    <shadedPattern>io.github.aaronai.shaded.org.slf4j</shadedPattern>
+                                    <shadedPattern>io.github.aliyunmq.shaded.org.slf4j</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.apache.rocketmq.logback.extensions</pattern>
