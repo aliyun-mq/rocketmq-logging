@@ -1,4 +1,4 @@
-## Logging for RocketMQ
+## Logging for Apache RocketMQ
 
 ### Getting started
 
@@ -38,3 +38,6 @@ To prevent the clash of logging configuration file with the [official logback](h
     <td><b>Java 6 or later</b></td>
   </tr>
 </table>
+
+### License
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html) Copyright (C) Apache Software Foundation
