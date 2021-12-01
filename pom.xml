@@ -30,7 +30,6 @@
     <version>1.0.1-SNAPSHOT</version>
     <modules>
         <module>rocketmq</module>
-        <module>rocketmq-wrapper</module>
         <module>extensions</module>
         <module>slf4j</module>
     </modules>
@@ -66,12 +65,6 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>rocketmq-logback-shaded</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>rocketmq-wrapper-logback-shaded</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
