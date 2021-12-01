@@ -1,5 +1,7 @@
 ## Logging for Apache RocketMQ
 
+![Build Status](https://github.com/aliyun-mq/rocketmq-logging/actions/workflows/maven.yml/badge.svg)
+
 ### Introduction
 
 Current project is a shaded logback to replace the logging module of rocketmq.
