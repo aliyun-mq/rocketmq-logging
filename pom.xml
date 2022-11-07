@@ -4,7 +4,7 @@
 
     <groupId>io.github.aliyunmq</groupId>
     <artifactId>rocketmq-logging</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>rocketmq-logging</name>
