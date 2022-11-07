@@ -99,4 +99,10 @@
             </plugin>
         </plugins>
     </build>
+
+    <scm>
+        <url>git@github.com:aliyun-mq/rocketmq-logging.git</url>
+        <connection>scm:git:git@github.com:aliyun-mq/rocketmq-logging.git</connection>
+        <developerConnection>scm:git:git@github.com:aliyun-mq/rocketmq-logging.git</developerConnection>
+    </scm>
 </project>
