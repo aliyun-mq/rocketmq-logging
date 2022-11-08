@@ -20,7 +20,7 @@
     <parent>
         <artifactId>rocketmq-logging</artifactId>
         <groupId>io.github.aliyun-mq</groupId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
