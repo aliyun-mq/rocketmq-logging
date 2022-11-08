@@ -18,7 +18,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <shade-prefix>org.apache.rocketmq.shaded</shade-prefix>
-        <config-file-prefix>rocketmq</config-file-prefix>
+        <config-file-prefix>rmq</config-file-prefix>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
