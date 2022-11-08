@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Inspired by [glowroot](https://github.com/glowroot/glowroot]), this project aims to provide a shaded SLF4J/Logback, making it possible to create an isolated environment for the logging system of [Apache RocketMQ](https://rocketmq.apache.org/).
+Inspired by [glowroot](https://github.com/glowroot/glowroot), this project aims to provide a shaded SLF4J/Logback, making it possible to create an isolated environment for the logging system of [Apache RocketMQ](https://rocketmq.apache.org/).
 
 ## Requirements
 
