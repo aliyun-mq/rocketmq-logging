@@ -8,7 +8,16 @@
     <packaging>pom</packaging>
 
     <name>rocketmq-logging</name>
-    <url>http://maven.apache.org</url>
+    <description>RocketMQ Logging</description>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <url>https://github.com/aliyun-mq/rocketmq-slf4j-bridge/</url>
 
     <modules>
         <module>rocketmq-slf4j-api</module>
