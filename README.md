@@ -2,6 +2,7 @@
 
 [![License][license-image]][license-url]
 [![build][build-image]][build-url]
+[![Maven Central][maven-image]][maven-url]
 
 ## Introduction
 
@@ -111,3 +112,5 @@ determine to release/drop it.
 [license-url]: https://www.apache.org/licenses/LICENSE-2.0.html
 [build-image]: https://github.com/aliyun-mq/rocketmq-logging/actions/workflows/build.yml/badge.svg
 [build-url]: https://github.com/aliyun-mq/rocketmq-logging/actions/workflows/build.yml
+[maven-image]: https://maven-badges.herokuapp.com/maven-central/io.github.aliyun-mq/rocketmq-logging/badge.svg
+[maven-url]: https://maven-badges.herokuapp.com/maven-central/io.github.aliyun-mq/rocketmq-logging
