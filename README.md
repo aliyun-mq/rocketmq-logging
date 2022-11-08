@@ -13,13 +13,31 @@ of [Apache RocketMQ](https://rocketmq.apache.org/).
 
 - Java 1.8 or later
 
-## Configuration
+## Getting Started
+
+Add the following dependency to your project. Remember to replace `ROCKETMQ-LOGGING-VERSION` with
+the [latest release](https://search.maven.org/search?q=g:io.github.aliyun-mq%20AND%20a:rocketmq-logging).
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>io.github.aliyun-mq</groupId>
+        <artifactId>rocketmq-slf4j-api</artifactId>
+        <version>ROCKETMQ-LOGGING-VERSION</version>
+    </dependency>
+    <dependency>
+        <groupId>io.github.aliyun-mq</groupId>
+        <artifactId>rocketmq-logback-classics</artifactId>
+        <version>ROCKETMQ-LOGGING-VERSION</version>
+    </dependency>
+</dependencies>
+```
 
 This project uses a different configuration file, which is `rmq.logback.xml/rmq.logback-test.xml/rmq.logback.groovy`
 instead of `logback.xml/logback-text.xml/logback.groovy`. Similar to standard logback configuration file, it will be
 loaded from the classpath.
 
-Besides, this library provides some extensions from logback, which are listed below:
+Besides, this library provides some extensions from logback, you can check them below.
 
 * [io.github.aliyunmq.logback.extensions.CustomConsoleAppender](./rocketmq-logback-extensions/src/main/java/io/github/aliyunmq/logback/extensions/CustomConsoleAppender.java)
 * [io.github.aliyunmq.logback.extensions.ProcessIdConverter](./rocketmq-logback-extensions/src/main/java/io/github/aliyunmq/logback/extensions/ProcessIdConverter.java)
@@ -80,6 +98,10 @@ mvn clean install -Prelease
 
 Sign in [nexus repository manager](https://s01.oss.sonatype.org/#stagingRepositories) and check the artifact, and
 determine to release/drop it.
+
+## Related Projects
+
+* [rocketmq-slf4j-api-bridge](https://github.com/aliyun-mq/rocketmq-slf4j-api-bridge): Bridge for SLF4J API of Apache RocketMQ.
 
 ## License
 
