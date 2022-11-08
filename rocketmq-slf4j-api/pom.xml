@@ -43,12 +43,12 @@
                             <createSourcesJar>true</createSourcesJar>
                             <shadeSourcesContent>true</shadeSourcesContent>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>
                             <relocations>
                                 <relocation>
                                     <pattern>org.slf4j</pattern>
-                                    <shadedPattern>org.apache.rocketmq.shaded.org.slf4j</shadedPattern>
+                                    <shadedPattern>${shade-prefix}.org.slf4j</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>

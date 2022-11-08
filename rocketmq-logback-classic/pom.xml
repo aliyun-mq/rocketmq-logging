@@ -34,9 +34,8 @@
         <!-- Make it compatible with Java8 -->
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <shade-prefix>org.apache.rocketmq.shade</shade-prefix>
-        <config-file-prefix>rmq</config-file-prefix>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <config-file-prefix>rmq</config-file-prefix>
     </properties>
 
     <dependencies>
@@ -121,24 +120,6 @@
                                     </shadedPattern>
                                 </relocation>
                             </relocations>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <delete file="${project.build.directory}/original-${project.artifactId}}-${project.version}.jar" />
-                            </target>
                         </configuration>
                     </execution>
                 </executions>

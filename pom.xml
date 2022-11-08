@@ -57,6 +57,8 @@
         <maven-javadoc-plugin.version>3.3.0</maven-javadoc-plugin.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-pgg-plugin.version>1.6</maven-pgg-plugin.version>
+        <!-- shade prefix for slf4j and logback -->
+        <shade-prefix>org.apache.rocketmq.shade</shade-prefix>
     </properties>
 
     <developers>
