@@ -73,7 +73,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>org.slf4j</pattern>
-                                    <shadedPattern>org.apache.rocketmq.shaded.org.slf4j</shadedPattern>
+                                    <shadedPattern>${shade-prefix}.org.slf4j</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>ch.qos.logback</pattern>
@@ -125,40 +125,6 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-antrun-plugin</artifactId>-->
-<!--                <version>1.8</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>run</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <target>-->
-<!--                                <delete file="${project.build.directory}/original-${project.artifactId}}-${project.version}.jar"/>-->
-<!--                            </target>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-jar-plugin</artifactId>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>jar</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <classifier>javadoc</classifier>-->
-<!--                            <classesDirectory>${project.basedir}/src/main/javadoc</classesDirectory>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
         </plugins>
     </build>
 </project>
