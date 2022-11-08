@@ -51,6 +51,21 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>io.github.aliyun-mq</groupId>
+                <artifactId>rocketmq-logback-classic</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.aliyun-mq</groupId>
+                <artifactId>rocketmq-logback-extensions</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.aliyun-mq</groupId>
+                <artifactId>rocketmq-slf4j-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
