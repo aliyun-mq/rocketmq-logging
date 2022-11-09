@@ -97,8 +97,7 @@ and `sonatype-nexus-staging-aliyun-mq`, then execute the command below:
 mvn clean install -Prelease
 ```
 
-Sign in [nexus repository manager](https://s01.oss.sonatype.org/#stagingRepositories) and check the artifact, and
-determine to release/drop it.
+Sign in [nexus repository manager](https://s01.oss.sonatype.org/#stagingRepositories) and check the artifact, then determine whether to release it.
 
 ## Related Projects
 
