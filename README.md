@@ -46,6 +46,12 @@ loading priority:
 * `rmq.tools.logback.xml`: configuration file for rocketmq-tools.
 * `rmq.client.logback.xml`: configuration file for rocketmq-client.
 
+The loading priority is decided by the dependency relationship of [Apache RocketMQ](https://github.com/apache/rocketmq):
+
+* client -> broker -> proxy
+* client -> controller -> namesrv
+* client -> tools -> namesrv
+
 Both of them are used to configure the logging system for different components of RocketMQ. Similar to standard logback
 configuration file, it will be loaded from the classpath.
 
