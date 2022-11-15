@@ -94,7 +94,7 @@ Set the password in your `settings.xml` for repositories: `sonatype-nexus-snapsh
 and `sonatype-nexus-staging-aliyun-mq`, then execute the command below:
 
 ```bash
-mvn clean install -Prelease
+mvn clean deploy -Prelease
 ```
 
 Sign in [nexus repository manager](https://s01.oss.sonatype.org/#stagingRepositories) and check the artifact, then determine whether to release it.
