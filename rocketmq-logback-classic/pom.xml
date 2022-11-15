@@ -94,6 +94,13 @@
                                     <shadedPattern>${config-file-prefix}.logback.configurationFile</shadedPattern>
                                 </relocation>
                                 <relocation>
+                                    <!-- shades logback internal constant and rename user's logback file, see
+                                      ch.qos.logback.classic.util.ContextInitializer -->
+                                    <rawString>true</rawString>
+                                    <pattern>^logback(-test)?.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}.logback$1.xml</shadedPattern>
+                                </relocation>
+                                <relocation>
                                     <!-- shades logback internal constant, see
                                       ch.qos.logback.classic.util.ContextInitializer -->
                                     <rawString>true</rawString>
@@ -101,18 +108,34 @@
                                     <shadedPattern>${config-file-prefix}.logback.groovy</shadedPattern>
                                 </relocation>
                                 <relocation>
-                                    <!-- shades logback internal constant, see
-                                      ch.qos.logback.classic.util.ContextInitializer -->
                                     <rawString>true</rawString>
-                                    <pattern>^sdk.logback.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.sdk.logback.xml</shadedPattern>
+                                    <pattern>^proxy.logback.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}.proxy.logback.xml</shadedPattern>
                                 </relocation>
                                 <relocation>
-                                    <!-- shades logback internal constant and rename user's logback file, see
-                                      ch.qos.logback.classic.util.ContextInitializer -->
                                     <rawString>true</rawString>
-                                    <pattern>^logback(-test)?.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.logback$1.xml</shadedPattern>
+                                    <pattern>^broker.logback.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}.broker.logback.xml</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <rawString>true</rawString>
+                                    <pattern>^namesrv.logback.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}.namesrv.logback.xml</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <rawString>true</rawString>
+                                    <pattern>^controller.logback.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}.controller.logback.xml</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <rawString>true</rawString>
+                                    <pattern>^tools.logback.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}.tools.logback.xml</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <rawString>true</rawString>
+                                    <pattern>^client.logback.xml$</pattern>
+                                    <shadedPattern>${config-file-prefix}.client.logback.xml</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->

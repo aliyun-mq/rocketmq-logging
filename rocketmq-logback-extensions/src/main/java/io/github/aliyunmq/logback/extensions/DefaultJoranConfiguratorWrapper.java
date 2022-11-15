@@ -14,14 +14,37 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class DefaultJoranConfiguratorWrapper extends DefaultJoranConfigurator {
-    final public static String AUTOCONFIG_FILE = "logback.xml";
-
-    final public static String SDK_AUTOCONFIG_FILE = "sdk.logback.xml";
 
     final public static String TEST_AUTOCONFIG_FILE = "logback-test.xml";
+    final public static String AUTOCONFIG_FILE = "logback.xml";
+
+    final public static String PROXY_AUTOCONFIG_FILE = "proxy.logback.xml";
+    final public static String BROKER_AUTOCONFIG_FILE = "broker.logback.xml";
+
+    final public static String NAMESRV_AUTOCONFIG_FILE = "namesrv.logback.xml";
+    final public static String CONTROLLER_AUTOCONFIG_FILE = "controller.logback.xml";
+    final public static String TOOLS_AUTOCONFIG_FILE = "tools.logback.xml";
+
+    final public static String CLIENT_AUTOCONFIG_FILE = "client.logback.xml";
+
+    private final List<String> configFiles;
+
+    public DefaultJoranConfiguratorWrapper() {
+        this.configFiles = new ArrayList<>();
+        configFiles.add(TEST_AUTOCONFIG_FILE);
+        configFiles.add(AUTOCONFIG_FILE);
+        configFiles.add(PROXY_AUTOCONFIG_FILE);
+        configFiles.add(BROKER_AUTOCONFIG_FILE);
+        configFiles.add(NAMESRV_AUTOCONFIG_FILE);
+        configFiles.add(CONTROLLER_AUTOCONFIG_FILE);
+        configFiles.add(TOOLS_AUTOCONFIG_FILE);
+        configFiles.add(CLIENT_AUTOCONFIG_FILE);
+    }
 
     @Override
     public ExecutionStatus configure(LoggerContext loggerContext) {
@@ -61,16 +84,13 @@ public class DefaultJoranConfiguratorWrapper extends DefaultJoranConfigurator {
             return url;
         }
 
-        url = getResource(TEST_AUTOCONFIG_FILE, myClassLoader, updateStatus);
-        if (url != null) {
-            return url;
+        for (String configFile : configFiles) {
+            url = getResource(configFile, myClassLoader, updateStatus);
+            if (url != null) {
+                return url;
+            }
         }
-
-        url = getResource(AUTOCONFIG_FILE, myClassLoader, updateStatus);
-        if (url != null) {
-            return url;
-        }
-        return getResource(SDK_AUTOCONFIG_FILE, myClassLoader, updateStatus);
+        return null;
     }
 
     private URL findConfigFileURLFromSystemProperties(ClassLoader classLoader, boolean updateStatus) {
