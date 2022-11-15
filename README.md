@@ -34,8 +34,8 @@ the [latest release](https://search.maven.org/search?q=g:io.github.aliyun-mq%20A
 </dependencies>
 ```
 
-This project uses a different configuration file, which is `rmq.logback.xml/rmq.logback-test.xml/rmq.logback.groovy`
-instead of `logback.xml/logback-text.xml/logback.groovy`. Similar to standard logback configuration file, it will be
+This project uses a different configuration file, which is `rmq.logback-test.xml/rmq.logback.xml/rmq.sdk.logback.xml`
+instead of `logback-text.xml/logback.groovy/logback.xml`. Similar to standard logback configuration file, it will be
 loaded from the classpath.
 
 Besides, this library provides some extensions from logback, you can check them below.
