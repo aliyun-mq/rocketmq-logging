@@ -34,26 +34,8 @@ the [latest release](https://search.maven.org/search?q=g:io.github.aliyun-mq%20A
 </dependencies>
 ```
 
-This project uses different configuration files, which is different from logback, and they are listed below by their
-loading priority:
-
-* `rmq.logback-test.xml`: configuration file for unit tests.
-* `rmq.logback.xml`: configuration file for production environment.
-* `rmq.proxy.logback.xml`: configuration file for rocketmq-proxy.
-* `rmq.broker.logback.xml`: configuration file for rocketmq-broker.
-* `rmq.namesrv.logback.xml`: configuration file for rocketmq-namesrv.
-* `rmq.controller.logback.xml`: configuration file for rocketmq-controller.
-* `rmq.tools.logback.xml`: configuration file for rocketmq-tools.
-* `rmq.client.logback.xml`: configuration file for rocketmq-client.
-
-The loading priority is decided by the dependency relationship of [Apache RocketMQ](https://github.com/apache/rocketmq):
-
-* client -> broker -> proxy
-* client -> controller -> namesrv
-* client -> tools -> namesrv
-
-Both of them are used to configure the logging system for different components of RocketMQ. Similar to standard logback
-configuration file, it will be loaded from the classpath.
+This project uses different configuration files, which is different from logback, you need to
+configure `rmq.logback-test.xml/rmq.logback-test.xml`
 
 Besides, this library provides some extensions from logback, you can check them below.
 

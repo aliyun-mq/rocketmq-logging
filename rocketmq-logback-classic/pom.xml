@@ -76,6 +76,12 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Implementation-Title>rocketmq-logging</Implementation-Title>
+                                        <Implementation-Version>${logback-classic.version}-rocketmq</Implementation-Version>
+                                    </manifestEntries>
+                                </transformer>
                             </transformers>
                             <relocations>
                                 <relocation>
@@ -99,49 +105,6 @@
                                     <rawString>true</rawString>
                                     <pattern>^logback(-test)?.xml$</pattern>
                                     <shadedPattern>${config-file-prefix}.logback$1.xml</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <!-- shades logback internal constant, see
-                                      ch.qos.logback.classic.util.ContextInitializer -->
-                                    <rawString>true</rawString>
-                                    <pattern>^logback.groovy$</pattern>
-                                    <shadedPattern>${config-file-prefix}.logback.groovy</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <rawString>true</rawString>
-                                    <pattern>^proxy.logback.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.proxy.logback.xml</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <rawString>true</rawString>
-                                    <pattern>^broker.logback.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.broker.logback.xml</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <rawString>true</rawString>
-                                    <pattern>^namesrv.logback.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.namesrv.logback.xml</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <rawString>true</rawString>
-                                    <pattern>^controller.logback.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.controller.logback.xml</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <rawString>true</rawString>
-                                    <pattern>^tools.logback.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.tools.logback.xml</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <rawString>true</rawString>
-                                    <pattern>^client.logback.xml$</pattern>
-                                    <shadedPattern>${config-file-prefix}.client.logback.xml</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
-                                    <rawString>true</rawString>
-                                    <pattern>^logback.ContextSelector$</pattern>
-                                    <shadedPattern>${config-file-prefix}.logback.ContextSelector</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <!-- logback internal constant, see ch.qos.logback.classic.ClassicConstants -->
