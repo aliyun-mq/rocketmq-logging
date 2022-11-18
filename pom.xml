@@ -21,7 +21,7 @@
 
     <groupId>io.github.aliyun-mq</groupId>
     <artifactId>rocketmq-logging</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.4</version>
     <packaging>pom</packaging>
 
     <name>rocketmq-logging</name>
