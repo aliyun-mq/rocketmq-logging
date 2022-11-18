@@ -34,8 +34,8 @@ the [latest release](https://search.maven.org/search?q=g:io.github.aliyun-mq%20A
 </dependencies>
 ```
 
-This project uses different configuration files, which is different from logback, you need to
-configure `rmq.logback-test.xml/rmq.logback-test.xml`
+This project uses different configuration files, which are different from logback, you need to
+configure `rmq.logback-test.xml/rmq.logback.xml` instead.
 
 Besides, this library provides some extensions from logback, you can check them below.
 
